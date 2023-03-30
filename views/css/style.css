@@ -1,0 +1,73 @@
+body {
+    margin: 0 auto;    
+}
+main {
+    display: flex;
+    flex-direction: row;
+    margin: 0% auto;
+}
+div.title {
+    background-color: #B6B6B4;
+    margin: 0 auto;
+}
+.title {
+    color: blue;
+    text-align: center;
+    padding-bottom: 1%;
+}
+.info {
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+}
+
+.navigation {
+    width: 40%;
+    text-align: center;
+    background-color: #307D7E;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 15%;
+
+}
+
+h2 {
+    margin-bottom: 5%;
+    color: red;
+}
+
+hr {
+    color: antiquewhite;
+    width: 80%;
+    border:2px dotted;
+    margin-bottom: 5%;
+}
+
+.navigation button {
+    background-color: unset;
+    color: #FFE5B4;
+    font-weight: bold;
+    font-size: x-large;
+    border:none;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.names {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+input {
+    height: 30px;
+}

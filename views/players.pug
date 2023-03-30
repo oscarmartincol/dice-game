@@ -1,0 +1,19 @@
+html 
+    Head 
+        title Datos de los jugadores
+        style 
+            include css/style.css
+    body 
+        div.title
+            h1.title  Bienvenido al Juego de dados
+        main
+            div.info 
+                h2 Nueva partida creada 
+                div.names 
+                    h1 Jugadores
+
+                    p= player1 
+                    p= player2
+                    p= player3          
+            div.navigation  
+                include partials/menu.pug  
