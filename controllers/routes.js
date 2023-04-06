@@ -37,8 +37,8 @@ const createGameForm = async (req, res = response) => {
 //Almacena el valor de la apuesta y inicia el juego.
 const startGame = async (req, res = response) => {
     const { bet } = req.body;
-    const id = req.params.id;
-    const game = await Game.findOne({ id });
+    const id = req.body.id;
+    const game = await Game.findById(id);
     console.log(game.inProgress);
     console.log(id);
 
