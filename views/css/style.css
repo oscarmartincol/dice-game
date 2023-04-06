@@ -16,11 +16,16 @@ div.title {
     padding-bottom: 1%;
 }
 .info {
-    width: 60%;
+    width: 100%;
     justify-content: center;
     text-align: center;
+    font-size: 2rem;
 }
-
+.info button {
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 2rem;
+}
 .navigation {
     width: 40%;
     text-align: center;
@@ -70,4 +75,19 @@ form {
 
 input {
     height: 30px;
+}
+td {
+    text-align: center;
+    width: 33.3%;
+    border: 1px dashed blue;
+}
+th {
+    text-align: center;
+    width: 33.3%;
+    background-color: aqua;
+}
+table {
+    font-size: 2rem;
+    width: 100%;
+    border: 1px solid black;
 }

@@ -8,6 +8,7 @@ html
             h1.title  Bienvenido al Juego de dados
         main
             div.info 
-                p=  message     
-            div.navigation   
-                include partials/menu.pug  
+                p=  message
+
+                form(action="/createGame", method="get") 
+                        button Crear nueva partida       

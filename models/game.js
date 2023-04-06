@@ -5,12 +5,19 @@ const mongoose = require('mongoose');
  */
 
 const gameSchema = new mongoose.Schema({
-    status: {
+    inProgress: {
         type: Boolean,
         default: false
+    },
+    bet: {
+        type: Number,
+        default: 0
     }
 });
 
+/**
+ * Esquema que representa un jugador
+ */
 const playerSchema = new mongoose.Schema({
     name: {
         type: String,

@@ -1,0 +1,18 @@
+html 
+    Head 
+        title Juego iniciado
+        style 
+            include css/style.css
+    body 
+        div.title
+            h1.title  Bienvenido al Juego de dados
+        main
+            div.info 
+                div.names 
+                    h3 La partida con el id ha sido iniciada  
+                                 
+                    form(action=`/game/${idGame}`, method="get")
+                        button(type='submit') Ver información de la partida
+                    form(action=`/game/${idGame}/winner`, method="get")
+                        button(type='submit') Ver puntajes
+                            

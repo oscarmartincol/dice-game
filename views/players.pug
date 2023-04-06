@@ -1,6 +1,6 @@
 html 
     Head 
-        title Datos de los jugadores
+        title Datos de los playeres
         style 
             include css/style.css
     body 
@@ -10,10 +10,19 @@ html
             div.info 
                 h2 Nueva partida creada 
                 div.names 
-                    h1 Jugadores
-
-                    p= player1 
-                    p= player2
-                    p= player3          
-            div.navigation  
-                include partials/menu.pug  
+                    h3 id de partida: 
+                        p= idGame 
+                    table  
+                        tr 
+                            th nombre del jugador 1 
+                            th Nombre del jugador 2
+                            th Nombre del jugador 3
+                        tr 
+                            td=name1
+                            td=name2
+                            td=name3           
+                    form(action=`/startGame`, method='POST')
+                        input(type="hidden", name='id', value=`${idGame}`)
+                        label(for="bet") Ingrese el valor de la apuesta por jugador para la partida.
+                        input(type="number" id='bet' name= 'bet' required) 
+                        button(type='submit') Comenzar juego  
