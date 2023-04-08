@@ -12,7 +12,7 @@ const gameSchema = new mongoose.Schema({
     bet: {
         type: Number,
         default: 0
-    }
+    },
 });
 
 /**
@@ -34,6 +34,7 @@ const playerSchema = new mongoose.Schema({
         type: Number,
         default: 0
     }
+    
 });
 
 const Game = mongoose.model( 'Game', gameSchema);

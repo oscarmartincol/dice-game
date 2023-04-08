@@ -1,6 +1,5 @@
 const { response } = require('express');
 const { Game, Player } = require('../models/game');
-
 /**
  * Configuración de la ruta principal
  */
@@ -39,44 +38,38 @@ const startGame = async (req, res = response) => {
     const { bet } = req.body;
     const id = req.body.id;
     const game = await Game.findById(id);
-    console.log(game.inProgress);
-    console.log(id);
 
-   
     game.inProgress = true;
     game.bet = bet;
-
     await game.save();
-    //Buscar los jugadores que participan en la partida
-    const players = await Player.find({ id });
 
+   
+    //Buscar los jugadores que participan en la partida
+    const players = await Player.find({ gameId: id });
     //Obtiene un puntaje por cada jugador al lanzar dos dados
     for (let player of players) {
         let score = 0;
         const dice1 = Math.floor((Math.random() * 6) + 1);
         const dice2 = Math.floor((Math.random() * 6) + 1);
         const result = dice1 + dice2;
-    
+
         score += result;
     
         //Guardar el puntaje de los jugadores
         player.score = score;
-        await player.save();
-            
+        await player.save();      
     }
-    
     res.render('lobby', { idGame: id });    
 
 }
 
 const gameStatus = async (req, res = response) => {
-    const  idGame  = req.params.idGame;
-    console.log(idGame);
+    const idGame = req.params.idGame;
 
-    const game = await Game.findOne( {idGame} );
-    const winner = await Player.findOne( { idGame } ).sort({ score: -1 });
+    const game = await Game.findById(idGame);
+    const players = await Player.find({ gameId: idGame });
 
-    res.render('gameState');
+    //res.render('gameState', {game});
 }
 
 

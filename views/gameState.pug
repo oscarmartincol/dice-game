@@ -1,3 +1,11 @@
+
+//-id de la partida
+//- id y nombre de cada jugador
+//- estado de la partida ( inProgress)
+//- Ganador
+
+
+
 html 
     Head 
         title Datos de los playeres
@@ -5,5 +13,14 @@ html
             include css/style.css
     body 
         div.title
-            h1.title  Bienvenido al Juego de dados
-        main     
+            h1.title  Datos de la partida 
+        main
+            table 
+                thead 
+                    tr 
+                    th Id del jugador 
+                    th Nombre del jugador 
+                tbody 
+                    each player in players 
+                        td= player._id 
+                        td= player.nombre    
