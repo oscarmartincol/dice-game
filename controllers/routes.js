@@ -67,9 +67,10 @@ const gameStatus = async (req, res = response) => {
     const idGame = req.params.idGame;
 
     const game = await Game.findById(idGame);
-    const players = await Player.find({ gameId: idGame });
+    const players = await Player.find({ gameId: idGame }).sort({score: -1});
+    console.log(players);
 
-    //res.render('gameState', {game});
+    res.render('gameState', {game, players, idGame});
 }
 
 

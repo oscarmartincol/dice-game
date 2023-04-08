@@ -13,4 +13,6 @@ router.post('/startGame', startGame);
 
 router.get('/game/:idGame', gameStatus);
 
+router.get('/game/:idGame/winner', gameStatus);
+
 module.exports = router;

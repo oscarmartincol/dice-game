@@ -1,0 +1,27 @@
+
+.status {
+    display: inline;
+}
+
+.players {
+    width: 80%;
+    margin: 20px auto;
+    font-size: medium;
+    padding-top: 20px;
+
+
+}
+
+.game {
+
+    padding-top: 20px;
+    margin: 20px auto;
+    width: 80%;
+    font-size: medium;
+}
+
+button {
+    width: 70%;
+    margin: 20px auto;
+    font-size: larger;
+}

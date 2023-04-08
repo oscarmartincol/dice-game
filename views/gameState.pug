@@ -1,26 +1,37 @@
-
-//-id de la partida
-//- id y nombre de cada jugador
-//- estado de la partida ( inProgress)
-//- Ganador
-
-
-
 html 
     Head 
         title Datos de los playeres
         style 
             include css/style.css
+            include css/gameStatus.css
     body 
         div.title
             h1.title  Datos de la partida 
-        main
-            table 
+        main(class='status')
+            table(class='game') 
                 thead 
                     tr 
-                    th Id del jugador 
-                    th Nombre del jugador 
+                        th Id de la partida 
+                        td= game._id 
+                tbody 
+                    tr 
+                        td Partida terminada 
+                        td= game.inProgress 
+                    tr 
+                        td Ganador(a)
+                        td= players[0].name
+            
+            table(class='players') 
+                thead 
+                    tr 
+                        th Id del jugador 
+                        th Nombre del jugador 
                 tbody 
                     each player in players 
-                        td= player._id 
-                        td= player.nombre    
+                        tr 
+                            td= player._id 
+                            td= player.name
+            
+            form(action=`/game/${game._id}/winner`, method="get")
+                button(type='submit') Ver puntajes
+
