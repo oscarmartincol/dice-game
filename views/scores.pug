@@ -1,12 +1,12 @@
 html 
     Head 
-        title Estado de la partida 
+        title Puntajes
         style 
             include css/style.css
             include css/gameStatus.css
     body 
         div.title
-            h1.title  Datos de la partida 
+            h1.title  Puntajes de la partida  
         main(class='status')
             table(class='game') 
                 thead 
@@ -18,20 +18,27 @@ html
                         td Partida terminada 
                         td= game.inProgress 
                     tr 
+                        td Valor apostado por jugador
+                        td= game.bet
+                    tr 
                         td Ganador(a)
-                        td= players[0].name
+                        td= players[0].name 
+                    tr 
+                        td Ganancia obtenida 
+                        td= game.bet*2
             
             table(class='players') 
                 thead 
                     tr 
                         th Id del jugador 
-                        th Nombre del jugador 
+                        th Nombre del jugador
+                        th Puntaje 
                 tbody 
                     each player in players 
                         tr 
                             td= player._id 
                             td= player.name
+                            td= player.score
             
-            form(action=`/game/${game._id}/winner`, method="get")
-                button(type='submit') Ver puntajes
-
+            form(action=`/createGame`, method="get")
+                button(type='submit') Crear nueva partida

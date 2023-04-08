@@ -73,5 +73,15 @@ const gameStatus = async (req, res = response) => {
     res.render('gameState', {game, players, idGame});
 }
 
+const winner = async (req, res = response) => {
+    const idGame = req.params.idGame;
 
-module.exports = { home, createGame, createGameForm, gameStatus, startGame };
+    const game = await Game.findById(idGame);
+    const players = await Player.find({ gameId: idGame }).sort({score: -1});
+    console.log(players);
+
+    res.render('scores', {game, players, idGame});
+}
+
+
+module.exports = { home, createGame, createGameForm, gameStatus, startGame, winner };
